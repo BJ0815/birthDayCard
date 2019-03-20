@@ -158,10 +158,9 @@ $(function () {
     btn.addEventListener('click', function() {
         var app = document.getElementById('app');
         app.classList.add('closeBtn');
+        this.removeAttribute("style");
+        setTimeout(function() {
+            process();
+        }, 1000);
     });
-
-    btn.addEventListener('transitionend', function(e) {
-        if (e.propertyName !== 'opacity') { return; }
-        setTimeout(process(), 1000);
-    })
 });
