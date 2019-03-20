@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css?family=Yellowtail');
+*{
+    padding: 0;
+    margin: 0;
+}
+html, body{
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    font-family: 'Courgette', Courier, monospace;
+}
+body{
+    position: relative;
+    height: inherit;
+    min-height: inherit;
+    background: #fdacb9;
+    background: -moz-linear-gradient(left, #fdacb9 0%, #fa3055 100%);
+    background: -webkit-linear-gradient(left, #fdacb9 0%,#fa3055 100%);
+    background: linear-gradient(to right, #fdacb9 0%,#fa3055 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdacb9', endColorstr='#fa3055',GradientType=1 );
+    font-size: 16px;
+}
+#app{
+    position: relative;
+    height: inherit;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#app.init .step1,
+#app.init .step2 {
+    display: none;
+}
+
+.step2{
+    min-width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    font-size: 3rem;
+}
+.step .step1{
+    -webkit-animation: stepOne .5s normal forwards ease-in-out;
+    -moz-animation: stepOne .5s normal forwards ease-in-out;
+    animation: stepOne .5s normal forwards ease-in-out;
+}
+.step .step2{
+    opacity: 1;
+    -webkit-animation: stepTwo 1.5s forwards ease-in-out;
+    -moz-animation: stepTwo 1.5s forwards ease-in-out;
+    animation: stepTwo 1.5s forwards ease-in-out;
+}
+h1, h2{
+    text-shadow: 0 0 150px rgba(255,255,255,.5), 0 0 20px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+}
+h1{
+    font-size: 8rem;
+}
+h2{
+    font-size: 3rem;
+    font-family: 'Yellowtail', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@-webkit-keyframes stepOne {
+    0%{
+        -webkit-transform: scale(1);
+    }
+    20%{
+        -webkit-transform: scale(1.3);
+    }
+    100%{
+        -webkit-transform: scale(0);
+    }
+}
+
+@-moz-keyframes stepOne {
+    0%{
+        -webkit-transform: scale(1);
+    }
+    20%{
+        -webkit-transform: scale(1.3);
+    }
+    100%{
+        -webkit-transform: scale(0);
+    }
+}
+
+@keyframes stepOne {
+    0%{
+        -webkit-transform: scale(1);
+    }
+    20%{
+        -webkit-transform: scale(1.3);
+    }
+    100%{
+        -webkit-transform: scale(0);
+    }
+}
+
+@-webkit-keyframes stepTwo {
+    0%{
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+    }
+    20%{
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+    }
+    50%{
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+    }
+    75%{
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(1.3);
+    }
+    100%{
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@-moz-keyframes stepTwo {
+    0%{
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+    }
+    20%{
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+    }
+    50%{
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+    }
+    75%{
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(1.3);
+    }
+    100%{
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes stepTwo {
+    0%{
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+    }
+    20%{
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+    }
+    50%{
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+    }
+    75%{
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(1.3);
+    }
+    100%{
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #app{
+        background-color: #000 !important;
+    }
+    #app .step1, #app .step2{
+        display: none;
+    }
+    #app::before{
+        content: '不支援手機觀看唷!!';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+    }
+}
+
+.loading-page {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    text-align: center;
+    font-size: 12px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.loading-box{
+    width: inherit;
+    height: inherit;
+    position: relative;
+}
+
+.loading-page .icon {
+    width: 28px;
+    height: 65px;
+    display: block;
+    border-radius: 15px;
+    border: 2px solid #b3b3b3;
+    margin: 0 auto;
+    transition: all .3s ease;
+    box-sizing: border-box;
+}
+
+.loading-page .icon::before {
+    content: '';
+    transition: all .3s ease;
+    width: 6px;
+    height: 6px;
+    display: block;
+    margin: 5px auto 0;
+    background-color: #b3b3b3;
+    border-radius: 50%;
+    animation: ball .5s linear infinite alternate;
+}
+
+.loading-page p {
+    width: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -10%);
+    transition: all .3s ease;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.loading-page span{
+    display: inline-block;
+    font-size: 20px;
+}
+
+.loading-page:hover span:nth-of-type(1) {
+    animation: enter .5s linear forwards;
+}
+.loading-page:hover span:nth-of-type(2) {
+    animation: up .5s linear forwards;
+}
+.loading-page:hover span:nth-of-type(3) {
+    animation: in .5s linear forwards;
+}
+
+.loading-page:hover i {
+    background-color: #fff;
+}
+
+@keyframes ball {
+    to {
+        transform: translateY(10px);
+    }
+}
+
+@-webkit-keyframes ball {
+    to {
+        transform: translateY(10px);
+    }
+}
+
+@-ms-keyframes ball {
+    to {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes enter {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+}
+
+
+@keyframes in {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+
+@keyframes up {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
