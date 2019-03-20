@@ -179,11 +179,11 @@ h2{
     #app{
         background-color: #000 !important;
     }
-    #app .step1, #app .step2{
+    #app .step1, #app .step2, #app .loading-page{
         display: none;
     }
     #app::before{
-        content: '不支援手機觀看唷!!';
+        content: '用電腦看!!';
         position: absolute;
         top: 50%;
         left: 50%;
@@ -205,6 +205,10 @@ h2{
     cursor: pointer;
 }
 
+.closeBtn .loading-page {
+    opacity: 0;
+    transition: all .5s ease;
+}
 .loading-box{
     width: inherit;
     height: inherit;

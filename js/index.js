@@ -144,7 +144,6 @@ $(function () {
     }
 
     function process() {
-        console.log('1');
         var app = document.getElementById('app');
         app.classList.remove('init');
 
@@ -157,7 +156,12 @@ $(function () {
     var btn = document.querySelector('.loading-page');
 
     btn.addEventListener('click', function() {
-        process();
+        var app = document.getElementById('app');
+        app.classList.add('closeBtn');
     });
-    // process();
+
+    btn.addEventListener('transitionend', function(e) {
+        if (e.propertyName !== 'opacity') { return; }
+        setTimeout(process(), 1000);
+    })
 });
